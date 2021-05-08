@@ -1,17 +1,17 @@
 import streamlit as st
 import pandas as pd
-import sales_functions
+import utils
 import datetime
 
 df = pd.read_csv('Raw data - orders_export_1.csv')
 manufacture_df = pd.read_csv('Raw data - 過去の発売数_edited.csv')
 latestStock = pd.read_csv('Raw data - 在庫数_edited.csv')
 
-df = sales_functions.cleanSalesData(df)
-manufacture_df = sales_functions.cleanManufactureData(manufacture_df)
-latestStock = sales_functions.cleanStockData(latestStock)
+df = utils.cleanSalesData(df)
+manufacture_df = utils.cleanManufactureData(manufacture_df)
+latestStock = utils.cleanStockData(latestStock)
 
-processed = sales_functions.ProcessData(df, manufacture_df, latestStock)
+processed = utils.ProcessData(df, manufacture_df, latestStock)
 
 st.title('Sales data')
 
