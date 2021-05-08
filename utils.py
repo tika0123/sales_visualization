@@ -271,8 +271,6 @@ class ProcessData():
 def selectSKU(df, setting_dict, asIndex=False):
 
     sku_df = pd.read_json('sku.json').T
-
-    print(setting_dict)
     categories = ['style', 'color', 'size']
     for category in categories:
 
